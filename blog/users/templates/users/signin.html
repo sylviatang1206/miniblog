@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+{% block head %}
+<title>signin</title>
+{% endblock %}
+
+{% block body %}
+                       
+    <form method="POST" class="signin-form"> 
+        {% csrf_token %}
+        <!-- {{form.as_p}} -->
+        Username:<br>
+        <input type="text" name="username"><br>
+        Password:<br>
+        <input type="password" name="password"><br><br>
+          <button type="submit" class="save btn btn-default">SignIn</button>
+      </form>
+    
+{% endblock %}

@@ -1,0 +1,23 @@
+
+
+<html>
+<h1>welcome</h1>
+<h2>
+        {% if user.is_authenticated %}
+            <p>Welcome, {{ users_user.firstname }}. Thanks for logging in.</p>
+        {% else %}
+            <p>Welcome, new user. Please log in.</p>
+        {% endif %}
+
+        {% if object_list %}
+            {%for name in object_list %}
+                {{ name.firstname }}
+            {% end for %}
+        {% else %}
+            <p>No messages have been logged.Log Message form.</p>
+        {% endif %}
+
+</h2>
+</html>
+
+
