@@ -4,15 +4,20 @@
 {% endblock %}
 
 {% block body %}
-                       
+    <h2 class="text2">Let's signin!</h2>                   
     <form method="POST" class="signin-form"> 
         {% csrf_token %}
         <!-- {{form.as_p}} -->
-        Username:<br>
-        <input type="text" name="username"><br>
-        Password:<br>
-        <input type="password" name="password"><br><br>
-          <button type="submit" class="save btn btn-default">SignIn</button>
-      </form>
+        Username: <input type="text" name="username"><br><br>
+        Password: <input type="password" name="password"><br><br>
+          <button type="submit button" class="btn btn-outline-dark">Sign In</button>
+    </form>
+    {% if messages %}
+        <script>
+            {% for msg in messages %}
+                alert('{{ msg.message }}');
+            {% endfor %}
+        </script>
+    {% endif %}
     
 {% endblock %}

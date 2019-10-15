@@ -1,64 +1,30 @@
-h1 a, h2 a{
-    color: darkseagreen;
-    font-family: 'Noto Sans', sans-serif;
+.bg-1{
+  background-color: dimgray;
+  color:rgba(241, 241, 232, 0.753);
+  min-height: 70%;
 }
-body {
-    padding-left: 15px;
+.bg-2 {
+  background-color: #33373b;
+  color: #ffffff;
 }
-.page-header {
-    background-color: lemonchiffon;
-    margin-top: 100px;
-    padding: 20px;
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
-
-@import url(https://fonts.googleapis.com/css?family=Oswald:400);
-
-.navigation {
-  width: 100%;
-  background-color: black;
+*{
+  font-family:'Cabin', sans-serif;
 }
-
-img {
-  width: 25px;
-  border-radius: 50px;
-  float: left;
+.navbar{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 25px;
 }
-
-.logout {
-  font-size: .8em;
-  font-family: 'Oswald', sans-serif;
-	position: relative;
-  right: -18px;
-  bottom: -4px;
-  overflow: hidden;
-  letter-spacing: 3px;
-  opacity: 0;
-  transition: opacity .45s;
-  -webkit-transition: opacity .35s;
-  
+.text1{
+  padding-top: 30px;
+  padding-bottom: 40px;
+  font-size: 3rem;
 }
-
-.button {
-	text-decoration: none;
-	float: right;
-  padding: 12px;
-  margin: 15px;
-  color: white;
-  width: 25px;
-  background-color: black;
-  transition: width .35s;
-  -webkit-transition: width .35s;
-  overflow: hidden
-}
-
-a:hover {
-  width: 100px;
-}
-
-a:hover .logout{
-  opacity: .9;
-}
-
-a {
-  text-decoration: none;
+.text2{
+  padding-bottom: 30px;
+  font-size: 2rem;
 }

@@ -1,7 +1,13 @@
 {% extends 'users/base.html' %}
+{% block head %}
+<title>signout</title>
+{% endblock %}
 
-<html>
+{% block body %}
     <h1>
-        loggedout
-    </h1>
-</html>
+        You have logged out.
+    </h1><br><br>
+    <form action='signin' method='GET'>
+            <button type="submit button" class="btn btn-outline-dark">Sign In</button>
+    </form>
+{% endblock %}

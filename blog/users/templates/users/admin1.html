@@ -5,30 +5,83 @@
 {% endblock %}
 
 {% block body %}
-<ul>
-       
-        </ul>
-        <table class="table">
-                <thead class="thead-dark">
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Website</th>
-                  </tr>
-                </thead>
-                <tbody>
-                {% for user in users %}
-                  <tr>
-                    <th scope="row">{{ user.pk }}</th>
-                    <td>{{ user.firstname }}</td>
-                    <td>{{ user.lastname }}</td>
-                    <td>{{ user.email }}</td>
-                    <td>{{ user.website }}</td>
-                    <button method="DELETE" action="delete_user" >Delete</button>
-                  </tr>
-                {% endfor %}
-                </tbody>
-              </table>
+  <div class="tables">
+    <table class="table table-responsive-lg">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Website</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            
+            <form method="POST" action="{% url 'create_user' %}">
+                {% csrf_token %}
+              <td><input type="text" name="input_username" required="required"/></td>
+              <td><input type="password" name="input_password" required="required"/></td>
+              <td><input type="text" name="input_fname" required="required"/></td>
+              <td><input type="text" name="input_lname" required="required"/></td>
+              <td><input type="email" name="input_email" required="required"/></td>
+              <td><input type="url" name="input_url" required="required"/></td>
+              <td><button type="submit button" class="btn btn-outline-warning">Create</button></td>
+            </form>
+          </tr>
+        </tbody>
+    </table>
+    <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Firstname</th>
+              <th scope="col">Lastname</th>
+              <th scope="col">Email</th>
+              <th scope="col">Website</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              
+              <form method="POST" action="{% url 'update_user' %}">
+                  {% csrf_token %}
+                <th>
+                    <select name="selectid" type="text">
+                      {% for user in users %}
+                      <option>{{ user.pk}}</option>
+                      {% endfor %}
+                    </select>
+                </th>
+                <td><input type="text" name="input_fname" required="required"/></td>
+                <td><input type="text" name="input_lname" required="required"/></td>
+                <td><input type="email" name="input_email" required="required"/></td>
+                <td><input type="url" name="input_url" required="required"/></td>
+                <td><button type="submit button" class="btn btn-warning">Update</button></td>
+              </form>
+            </tr>
+          {% for user in users %}
+            <tr>
+              <th name="userid" scope="row">{{ user.pk }}</th>
+              <td>{{ user.firstname }}</td>
+              <td>{{ user.lastname }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.website }}</td>
+              <td>
+                <form action="{% url 'delete_user' pk=user.pk %}" method="POST">
+                    {% csrf_token %}
+                    <input class="btn btn-default btn-danger" type="submit" value="Delete"/>
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+          </tbody>
+    </table>
+  </div>
+        
+        
 {% endblock %}

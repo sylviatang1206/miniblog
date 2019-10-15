@@ -4,10 +4,17 @@
 <title>signup</title>
 {% endblock %}
 {% block body %}
-    <h2>signup page</h2>
+    <h2 class="text2">Sign up now!</h2>
     <form method="POST" class="signup-form">
         {% csrf_token %}
         {{ form_signup.as_p }}
-        <button type="submit" class="save btn btn-default">SignUp</button>
+        <button type="submit button" class="btn btn-outline-dark">Sign Up</button>
     </form>
+    {% if messages %}
+        <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}
