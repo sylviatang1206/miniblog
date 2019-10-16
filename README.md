@@ -1,4 +1,4 @@
-# miniblog
+# Miniblog for Wick Careers, Inc.
 Django project for user management
 ## How to run
 - Step1: clone the repo
