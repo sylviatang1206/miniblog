@@ -1,21 +1,26 @@
 # miniblog
 Django_project for user management
 ## How to run
-step1: clone the repo
+- Step1: clone the repo
+```
+git clone https://github.com/sylviatang1206/miniblog.git
+```
 
-`git clone https://github.com/sylviatang1206/miniblog.git`
+- Step2: activate python virtualenv
+```
+source env/bin/activate
+```
 
-step2: activate python virtualenv
+- Step3: start server
 
-`source env/bin/activate`
+```
+cd blog/
+python manage.py runserver
+```
 
-step3: start server
+- Step4: open url in browser
 
-`cd blog/`
-
-`python manage.py runserver`
-
-step4: open url in browser
-
-`http://127.0.0.1:8000/`
+```
+http://127.0.0.1:8000/
+```
 
