@@ -1,5 +1,5 @@
 # miniblog
-Django_project for user management
+Django project for user management
 ## How to run
 - Step1: clone the repo
 ```
